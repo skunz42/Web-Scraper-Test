@@ -5,6 +5,7 @@ import (
     "net/http"
     "io/ioutil"
     "encoding/json"
+    "os"
     "../../src/auth"
 )
 
@@ -47,7 +48,12 @@ func getCommentUsers(c *auth.Client, ids []string, users []string) {
 }
 
 func main() {
-    config_data := auth.MakeClient()
+    if len(os.Args) != 2 {
+        fmt.Println("Please enter a filename")
+        os.Exit(1)
+    }
+
+    config_data := auth.MakeClient(os.Args[1])
 
     auth.GetToken(config_data)
 
