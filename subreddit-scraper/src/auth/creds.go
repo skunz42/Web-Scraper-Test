@@ -9,7 +9,6 @@ import (
 
 const file_line_nums = 5
 
-//TODO add in fn
 func MakeClient(fn string) *Client {
     c := &Client {
         Http_Client: &http.Client{ Timeout: time.Second * 10, },
