@@ -17,12 +17,8 @@ func main() {
 
     auth.GetToken(config_data)
 
-    ids := make([]string, 0)
-    users := make([]string, 0)
+    ids := nil
+    users := nil
 
-    ids, users = scraper.GetSubPosts(config_data, ids, users)
-
-    for i := range(users) {
-        fmt.Println(users[i])
-    }
+    scraper.GetCommentUsers(config_data, ids, users)
 }
