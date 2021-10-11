@@ -22,7 +22,7 @@ func main() {
 
     ids, users = scraper.GetSubPosts(config_data, ids, users)
 
-    for i := range(users) {
-        fmt.Println(users[i])
+    for i := range(ids) {
+        fmt.Println(ids[i])
     }
 }

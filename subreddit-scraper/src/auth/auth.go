@@ -10,15 +10,11 @@ import (
 type Listing struct {
 	Kind string
 	Data struct {
-		Domain    string
-		Subreddit string
 		Id        string
-		Author    string
-		Permalink string
-		Title     string
-		Url       string
         Name      string
-		Score     int
+		Author    string
+		Title     string
+		Created   json.Number
 	}
 }
 
