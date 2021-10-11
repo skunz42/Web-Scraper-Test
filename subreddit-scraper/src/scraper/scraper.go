@@ -6,11 +6,9 @@ import (
     "io/ioutil"
     "encoding/json"
     "../auth"
-    "math"
-    "strconv"
 )
 
-func GetSubPosts(c *auth.Client, ids []string, users []string) ([]string, []string) {
+func GetSubPosts(c *auth.Client, ids []auth.Listing) ([]auth.Listing) {
     sub_endpoint_url := "https://oauth.reddit.com/r/golang/new"
 
     url_params := url.Values{}
@@ -29,12 +27,13 @@ func GetSubPosts(c *auth.Client, ids []string, users []string) ([]string, []stri
     json.Unmarshal(body, r)
 
     for i := range(r.Data.Children) {
-        f64, _ := r.Data.Children[i].Data.Created.Float64()
-        i64 := int(math.Round(f64))
-        ids = append(ids, strconv.Itoa(i64))
-        users = append(users, r.Data.Children[i].Data.Author)
+        //f64, _ := r.Data.Children[i].Data.Created.Float64()
+        //i64 := int(math.Round(f64))
+        //ids = append(ids, r.Data.Children[i].Data.Id)
+        //users = append(users, r.Data.Children[i].Data.Author)
+        ids = append(ids, r.Data.Children[i])
     }
 
-    return ids, users
+    return ids
 }
 

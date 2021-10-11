@@ -17,12 +17,11 @@ func main() {
 
     auth.GetToken(config_data)
 
-    ids := make([]string, 0)
-    users := make([]string, 0)
+    ids := make([]auth.Listing, 0)
 
-    ids, users = scraper.GetSubPosts(config_data, ids, users)
+    ids = scraper.GetSubPosts(config_data, ids)
 
     for i := range(ids) {
-        fmt.Println(ids[i])
+        fmt.Println(ids[i].Data.Id)
     }
 }
