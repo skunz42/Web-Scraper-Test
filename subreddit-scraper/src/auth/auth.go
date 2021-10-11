@@ -7,23 +7,6 @@ import (
     "strings"
 )
 
-type Listing struct {
-	Kind string
-	Data struct {
-		Id        string
-        Name      string
-		Author    string
-		Title     string
-		Created   json.Number
-	}
-}
-
-type Response struct {
-	Type string
-	Data struct {
-		Children []Listing
-	}
-}
 
 func GetToken(c *Client) error {
     endpoint_url := "https://www.reddit.com/api/v1/access_token"

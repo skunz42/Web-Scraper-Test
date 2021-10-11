@@ -17,7 +17,7 @@ func main() {
 
     auth.GetToken(config_data)
 
-    ids := make([]auth.Listing, 0)
+    ids := make([]scraper.Listing, 0)
 
     ids = scraper.GetSubPosts(config_data, ids)
 

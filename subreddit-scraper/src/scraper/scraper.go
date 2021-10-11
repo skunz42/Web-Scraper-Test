@@ -8,7 +8,7 @@ import (
     "../auth"
 )
 
-func GetSubPosts(c *auth.Client, ids []auth.Listing) ([]auth.Listing) {
+func GetSubPosts(c *auth.Client, ids []Listing) ([]Listing) {
     sub_endpoint_url := "https://oauth.reddit.com/r/golang/new"
 
     url_params := url.Values{}
@@ -22,7 +22,7 @@ func GetSubPosts(c *auth.Client, ids []auth.Listing) ([]auth.Listing) {
     defer res.Body.Close()
 
     body, _ := ioutil.ReadAll(res.Body)
-    r := &auth.Response{}
+    r := &Response{}
 
     json.Unmarshal(body, r)
 
