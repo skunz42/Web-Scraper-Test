@@ -5,7 +5,7 @@ import (
     "net/url"
     "io/ioutil"
     "encoding/json"
-    "../auth"
+    "skunz42/web-scraper/src/auth"
 )
 
 func GetSubPosts(c *auth.Client, ids []Listing) ([]Listing) {

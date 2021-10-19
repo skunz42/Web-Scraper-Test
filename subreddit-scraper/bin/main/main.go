@@ -3,8 +3,8 @@ package main
 import (
     "fmt"
     "os"
-    "../../src/auth"
-    "../../src/scraper"
+    "skunz42/web-scraper/src/auth"
+    "skunz42/web-scraper/src/scraper"
 )
 
 func main() {
